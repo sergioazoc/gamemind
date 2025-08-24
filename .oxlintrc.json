@@ -1,0 +1,52 @@
+{
+  "$schema": "node_modules/oxlint/configuration_schema.json",
+
+  // 🔹 Presets recomendados
+  "extends": ["plugin:react/recommended", "plugin:typescript/recommended"],
+
+  // 🔹 Categorías generales
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+
+  // 🔹 Plugins integrados (no necesitas instalarlos)
+  "plugins": ["react", "typescript"],
+
+  // 🔹 Entornos
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+
+  // 🔹 Reglas personalizadas / overrides de los presets
+  "rules": {
+    "eqeqeq": "error",
+    "react/self-closing-comp": "warn",
+
+    // ❌ Obsoletas con React 19
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
+
+    // Opcional: advertir si se exportan componentes anónimos
+    "react/display-name": "warn"
+  },
+
+  // 🔹 Overrides por tipo de archivo
+  "overrides": [
+    {
+      // Tests (Vitest o Jest)
+      "files": ["**/*.test.{ts,tsx}"],
+      "env": { "jest": true },
+      "plugins": ["jest"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    },
+    {
+      // Archivos de config (vite.config.ts, eslint.config.js, etc.)
+      "files": ["**/*.config.{js,ts}", "**/vite.config.{js,ts}"],
+      "env": { "node": true }
+    }
+  ]
+}

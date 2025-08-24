@@ -1,3 +1,4 @@
-import { type RouteConfig, index } from "@react-router/dev/routes";
+import { type RouteConfig } from '@react-router/dev/routes'
+import trendingRoutes from './domains/trending/routes/trendingRoutes'
 
-export default [index("routes/home.tsx")] satisfies RouteConfig;
+export default [...trendingRoutes] satisfies RouteConfig

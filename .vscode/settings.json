@@ -1,0 +1,10 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "oxc.enable": true,
+  "oxc.lint.run": "onType", // o "onSave"
+  "oxc.configPath": ".oxlintrc.json", // fuerza a leer tu config
+  "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "always"
+  }
+}
