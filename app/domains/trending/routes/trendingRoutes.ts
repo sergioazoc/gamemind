@@ -1,3 +1,5 @@
-import { index } from '@react-router/dev/routes'
+import { index, layout } from '@react-router/dev/routes'
 
-export default [index('domains/trending/views/HomeView.tsx')]
+export default [
+  layout('shared/layouts/DefaultLayout.tsx', [index('domains/trending/views/HomeView.tsx')]),
+]
