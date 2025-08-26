@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router'
-import { Gamepad2, Home } from 'lucide-react'
+import { Gamepad2, TrendingUp } from 'lucide-react'
 
 import {
   Sidebar,
@@ -17,9 +17,9 @@ import {
 // Menu items.
 const items = [
   {
-    title: 'Inicio',
+    title: 'Top 10',
     url: '/',
-    icon: Home,
+    icon: TrendingUp,
   },
 ]
 
@@ -42,7 +42,7 @@ export function AppSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Secciones</SidebarGroupLabel>
+          <SidebarGroupLabel>Trending</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
